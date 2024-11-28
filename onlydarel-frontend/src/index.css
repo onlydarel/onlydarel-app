@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply bg-bgBlue;
+    color: white; 
+    
+  }
+  @layer base {
+    /* Set Outfit as the primary font and Montserrat as the fallback */
+    body {
+      font-family: 'Outfit', sans-serif;
+    }
+    p {
+      font-family: 'Roboto', sans-serif; /* Optional: Use Montserrat for headings */
+    }
+  }
+
+  @keyframes bg-slide {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .bg-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    animation: bg-slide 2s ease-in-out infinite;
+  }
+
+  @keyframes bg-up {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .bg-hero {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    animation: bg-up 6s ease-in-out infinite;
+  }
+  
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+    
+  }
+  
+  .carousel-track {
+    animation: slide 10s linear infinite;
+  }
+  
